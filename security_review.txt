@@ -1,0 +1,7 @@
+Security Measures Implemented:
+
+- HTTPS enforced using SECURE_SSL_REDIRECT and HSTS settings
+- Secure cookies enabled for CSRF and session protection
+- Headers added to prevent clickjacking, MIME sniffing, and XSS
+- Deployment notes prepared for SSL setup
+- All changes documented in settings.py with comments
