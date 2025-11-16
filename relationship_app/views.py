@@ -1,3 +1,10 @@
+from django.contrib.auth.decorators import login_required, permission_required
+@login_required
+@permission_required('relationship_app.can_edit', raise_exception=True)
+def edit_book(request, book_id):
+    # Your logic here
+    return HttpResponse("Edit book view")
+
 from django.shortcuts import render
 from .models import Book
 
