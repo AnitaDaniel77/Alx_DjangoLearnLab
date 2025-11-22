@@ -1,0 +1,12 @@
+To enable HTTPS in production:
+
+1. Obtain an SSL certificate (e.g., from Let's Encrypt).
+2. Configure your web server (e.g., Nginx or Apache) with:
+   - SSL certificate and key paths
+   - Redirect all HTTP traffic to HTTPS
+   - Set headers for HSTS, X-Frame-Options, Content-Type-Nosniff
+3. Confirm Django settings:
+   - SECURE_SSL_REDIRECT = True
+   - SECURE_HSTS_SECONDS = 31536000
+   - SESSION_COOKIE_SECURE = True
+   - CSRF_COOKIE_SECURE = True
