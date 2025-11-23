@@ -22,9 +22,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-<<<<<<< HEAD
-=======
-from bookshelf.models import Book
-book = Book.objects.create(title="1984", author="George Orwell", publication_year=1949)
-book
->>>>>>> 3232a20120c5f26645800d9869634c2555459d1e
+
