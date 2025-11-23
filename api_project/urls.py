@@ -25,3 +25,13 @@ from django.urls import path, include
 urlpatterns = [
     path('api/', include('api.urls')),
 ]
+
+from django.urls import path, include
+#Add endpoint for token retrieval
+from rest_framework.authtoken.views import obtain_auth_token
+
+urlpatterns = [
+    path('api/', include('api.urls')),
+    path('api-token-auth/', obtain_auth_token),
+]
+
