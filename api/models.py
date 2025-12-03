@@ -1,5 +1,6 @@
 from django.db import models
 
+<<<<<<< HEAD
 class Author(models.Model):
     # The Author model stores basic information about a writer.
     # Each Author can be linked to multiple Book instances (one-to-many relationship).
@@ -24,4 +25,9 @@ class Book(models.Model):
         # This makes the admin and shell display the book title instead of an ID.
         return self.title
 
+=======
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=100)
+>>>>>>> 5b4842a05845136b4460cd1b3146030f79c267bb
 
