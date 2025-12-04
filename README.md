@@ -15,3 +15,12 @@ This is a basic Django project created for learning purposes.
 # Status:
 # Task 1 is complete, tested, and ready for submission.
 
+# Advanced API Project (Django + DRF)
+
+A simple Django REST Framework setup with Author and Book models, nested serializers, and validation.
+
+## Setup
+```bash
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
