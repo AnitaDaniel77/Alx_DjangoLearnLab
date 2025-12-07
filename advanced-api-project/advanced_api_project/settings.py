@@ -43,6 +43,16 @@ INSTALLED_APPS = [
     "api",             # Our custom app containing models and serializers
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',     # Enables toke>
+        'rest_framework.authentication.SessionAuthentication',   # Enables brow>
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',  # Default: rea>
+    ],
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -120,13 +130,3 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Global DRF settings
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',     # Enables token auth
-        'rest_framework.authentication.SessionAuthentication',   # Enables browser login
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',  # Default: read-only for unauthenticated
-    ],
-}
