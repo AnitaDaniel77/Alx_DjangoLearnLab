@@ -1,44 +1,38 @@
-from django.shortcuts import render
-
-# Create your views here.
 from rest_framework import generics, permissions
 from .models import Book
 from .serializers import BookSerializer
 
-# ListView: Retrieve all books
+# View to list all books (public access)
 class BookListView(generics.ListAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    # Allow unauthenticated users to view books
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny]  # Anyone can view books
 
 
-# DetailView: Retrieve a single book by ID
+# View to retrieve a single book by ID (public access)
 class BookDetailView(generics.RetrieveAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny]  # Anyone can view a book
 
 
-# CreateView: Add a new book
+# View to create a new book (requires authentication)
 class BookCreateView(generics.CreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    # Only authenticated users can create books
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]  # Only logged-in users can create
 
 
-# UpdateView: Modify an existing book
+# View to update an existing book (requires authentication)
 class BookUpdateView(generics.UpdateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    # Only authenticated users can update books
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]  # Only logged-in users can update
 
 
-# DeleteView: Remove a book
+# View to delete a book (requires authentication)
 class BookDeleteView(generics.DestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    # Only authenticated users can delete books
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]  # Only logged-in users can delete
+

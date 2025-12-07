@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
+
+# Project-level URL configuration
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('api.urls')),  # This connects your app's URLs
