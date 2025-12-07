@@ -40,6 +40,7 @@ INSTALLED_APPS = [
    # Default Django apps...
     "rest_framework",  # Django REST Framework for building APIs
     "rest_framework.authtoken",
+    "django_filters",  # Filtering support
     "api",             # Our custom app containing models and serializers
 ]
 
@@ -51,6 +52,13 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',  # Default: rea>
     ],
+# Enable global filter backends (optional; you can also set per-view)
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ],
+
 }
 
 MIDDLEWARE = [
