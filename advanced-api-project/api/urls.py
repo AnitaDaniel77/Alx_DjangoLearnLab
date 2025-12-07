@@ -1,4 +1,4 @@
-from django.urls import path
+ofrom django.urls import path
 from .views import (
     BookListView,
     BookDetailView,
