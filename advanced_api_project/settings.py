@@ -39,6 +39,7 @@ INSTALLED_APPS = [
    'django.contrib.staticfiles',
    # Default Django apps...
     "rest_framework",  # Django REST Framework for building APIs
+    "rest_framework.authtoken",
     "api",             # Our custom app containing models and serializers
 ]
 
@@ -118,3 +119,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',     # Enables token auth
+        'rest_framework.authentication.SessionAuthentication',   # Enables browser login
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',  # Default: read-only for unauthenticated
+    ],
+}
