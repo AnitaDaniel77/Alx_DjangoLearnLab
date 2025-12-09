@@ -20,7 +20,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# advanced-api-project/manage.py
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'advanced_api_project.settings')
- 945dda0f87ccc3e1501e42ff3adfe1ce49665482
